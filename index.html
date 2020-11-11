@@ -265,11 +265,30 @@
       text-align: right;
     }
 
+    .heart {
+      width: 8px;
+      height: 10px;
+      margin-left: 3px;
+      display: none;
+    }
+
+    .heart-text {
+      display: inline;
+    }
+
     .chinese {
       font-size: 14px !important;
     }
 
     @media screen and (max-width: 500px) {
+      .heart {
+        display: inline;
+      }
+
+      .heart-text {
+        display: none;
+      }
+
       .card:hover {
         left: 50%;
       }
@@ -320,9 +339,9 @@
           <p>I will accompany you to make your </p>
           <p>birthday wishes every year</p>
           <p class="chinese">也謝謝妳一直陪在我身邊</p>
-          <p style="color: brown;">I love u ♥ </p>
+          <p style="color: brown;">I love u <span class="heart-text"> ♥</span></p>
           <p class="text-right">Your Engineering Boyfriend</p>
-          <p class="text-right">♥ Dylan</p>
+          <p class="text-right"><span class="heart-text">♥</span><img class="heart" src="heart.png"> Dylan</p>
     </div>
   </div>
   <script>
