@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ivy</title>
+  <title>Happy birthday - Ivy</title>
   <style>
     @import url('https://fonts.googleapis.com/css?family=Amatic+SC');
     @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap');
@@ -19,6 +19,10 @@
       background: #85e7e2;
       margin: 0px;
       padding: 0px;
+    }
+
+    ::-moz-selection {
+      background: transparent;
     }
 
     ::selection {
@@ -39,24 +43,36 @@
       color: #C0392B
     }
 
-
     .card {
+      opacity: 0;
       color: #087e7e;
       position: absolute;
-      top: 50%;
+      top: 45%;
       left: 50%;
       width: 300px;
       height: 400px;
       background: #f1f1ef;
+      -webkit-transform-style: preserve-3d;
       transform-style: preserve-3d;
+      -webkit-transform: translate(-50%, -50%) perspective(2000px);
       transform: translate(-50%, -50%) perspective(2000px);
+      -webkit-box-shadow: inset 300px 0 50px rgba(0, 0, 0, .5), 20px 0 60px rgba(0, 0, 0, .5);
       box-shadow: inset 300px 0 50px rgba(0, 0, 0, .5), 20px 0 60px rgba(0, 0, 0, .5);
+      -webkit-transition: 1s;
+      -o-transition: 1s;
       transition: 1s;
     }
 
+    .show {
+      top: 50%;
+      opacity: 1;
+    }
+
     .card:hover {
+      -webkit-transform: translate(-50%, -50%) perspective(2000px) scale(1.2) rotate(-5deg);
       transform: translate(-50%, -50%) perspective(2000px) scale(1.2) rotate(-5deg);
       left: 53%;
+      -webkit-box-shadow: inset 15px 0 15px rgba(0, 0, 0, .5), 0 30px 100px rgba(0, 0, 0, .5);
       box-shadow: inset 15px 0 15px rgba(0, 0, 0, .5), 0 30px 100px rgba(0, 0, 0, .5);
     }
 
@@ -68,7 +84,11 @@
       width: 100%;
       height: 5px;
       background: #BAC1BA;
+      -webkit-transform-origin: bottom;
+      -ms-transform-origin: bottom;
       transform-origin: bottom;
+      -webkit-transform: skewX(-45deg);
+      -ms-transform: skewX(-45deg);
       transform: skewX(-45deg);
       z-index: 0;
     }
@@ -81,16 +101,22 @@
       width: 5px;
       height: 100%;
       background: #92A29C;
+      -webkit-transform-origin: left;
+      -ms-transform-origin: left;
       transform-origin: left;
+      -webkit-transform: skewY(-45deg);
+      -ms-transform: skewY(-45deg);
       transform: skewY(-45deg);
     }
 
     .love-area {
       position: absolute;
-      width: 100px;
-      transform: rotate(30deg);
-      right: 5px;
-      top: 8px;
+      width: 90px;
+      -webkit-transform: rotate(20deg);
+      -ms-transform: rotate(20deg);
+      transform: rotate(20deg);
+      right: 17px;
+      top: 0px;
     }
 
     .love-area img {
@@ -102,7 +128,11 @@
       width: 100%;
       height: 100%;
       position: relative;
+      -webkit-transform-origin: left;
+      -ms-transform-origin: left;
       transform-origin: left;
+      -webkit-transition: .7s;
+      -o-transition: .7s;
       transition: .7s;
     }
 
@@ -112,6 +142,8 @@
       width: 100%;
       height: 100%;
       opacity: 0;
+      -webkit-transition: .7s;
+      -o-transition: .7s;
       transition: .7s;
     }
 
@@ -121,18 +153,26 @@
     }
 
     .card:hover .imgBox {
+      -webkit-transform: rotateY(-135deg);
       transform: rotateY(-135deg);
     }
 
     .card:hover .bark {
       opacity: 1;
+      -webkit-transition: .6s;
+      -o-transition: .6s;
       transition: .6s;
+      -webkit-box-shadow: 300px 200px 100px rgba(0, 0, 0, .4) inset;
       box-shadow: 300px 200px 100px rgba(0, 0, 0, .4) inset;
     }
 
     .card:hover .love {
       opacity: 1;
+      -webkit-transition: .6s;
+      -o-transition: .6s;
       transition: .6s;
+      -webkit-transition-delay: 0.2s;
+      -o-transition-delay: 0.2s;
       transition-delay: 0.2s;
     }
 
@@ -151,6 +191,7 @@
       position: absolute;
       top: 0;
       left: 0;
+      -webkit-box-sizing: border-box;
       box-sizing: border-box;
       padding: 0 0 0 10px;
       z-index: -1;
@@ -162,6 +203,7 @@
       width: 130px;
       top: -80px;
       left: -10px;
+      -webkit-animation: alternate chicken 3s infinite linear;
       animation: alternate chicken 3s infinite linear;
     }
 
@@ -170,16 +212,36 @@
       height: 100%;
     }
 
-    @keyframes chicken {
+    @-webkit-keyframes chicken {
       0% {
+        -webkit-transform: rotate(-10deg);
         transform: rotate(-10deg);
       }
 
       50% {
+        -webkit-transform: rotate(10deg);
         transform: rotate(10deg);
       }
 
       100% {
+        -webkit-transform: rotate(-10deg);
+        transform: rotate(-10deg);
+      }
+    }
+
+    @keyframes chicken {
+      0% {
+        -webkit-transform: rotate(-10deg);
+        transform: rotate(-10deg);
+      }
+
+      50% {
+        -webkit-transform: rotate(10deg);
+        transform: rotate(10deg);
+      }
+
+      100% {
+        -webkit-transform: rotate(-10deg);
         transform: rotate(-10deg);
       }
     }
@@ -201,6 +263,7 @@
 
     @media screen and (max-width: 500px) {
       .card:hover {
+        -webkit-transform: translate(-50%, -50%) perspective(2000px);
         transform: translate(-50%, -50%) perspective(2000px);
       }
     }
@@ -209,9 +272,9 @@
 
 <body>
   <div class="card">
-    <div class="love-area">
+    <!-- <div class="love-area">
       <img src="love.png">
-    </div>
+    </div> -->
     <div class="imgBox">
       <div class="bark">
         <div class="love">♥</div>
@@ -236,6 +299,11 @@
           <p class="text-right">♥ Dylan</p>
     </div>
   </div>
+  <script>
+    setTimeout(() => {
+      document.querySelector('.card').classList.add("show");
+    }, 0)
+  </script>
 </body>
 
 </html>
