@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang=en ontouchmove>
 
 <head>
   <meta charset="UTF-8">
@@ -14,7 +14,8 @@
     }
 
     body {
-      overflow: hidden;
+      overflow-y: hidden;
+      overflow-x: scroll;
       font-family: 'Caveat', cursive;
       background: #85e7e2;
       margin: 0px;
@@ -168,6 +169,7 @@
       box-shadow: 300px 200px 100px rgba(0, 0, 0, .4) inset;
     }
 
+
     .card:hover .love {
       opacity: 1;
       -webkit-transition: .6s;
@@ -316,8 +318,8 @@
   </style>
 </head>
 
-<body>
-  <div class="card">
+<body tabIndex=0>
+  <div class="card" onclick="hover()">
     <!-- <div class="love-area">
       <img src="love.png">
     </div> -->
@@ -349,6 +351,10 @@
     setTimeout(() => {
       document.querySelector('.card').classList.add("show");
     }, 0)
+
+    function hover() {
+      document.querySelector('.card').classList.add("card-hover");
+    }
   </script>
 </body>
 
