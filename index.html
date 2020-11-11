@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ivy</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Amatic+SC');
+    @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap');
+
+    ::-webkit-scrollbar {
+      width: 0px;
+    }
+
+    body {
+      overflow: hidden;
+      font-family: 'Caveat', cursive;
+      background: #85e7e2;
+      margin: 0px;
+      padding: 0px;
+    }
+
+    ::selection {
+      background: transparent;
+    }
+
+    h4 {
+      font-size: 24px;
+      line-height: 1px;
+      font-family: 'Amatic SC', cursive !important;
+    }
+
+    .color1 {
+      color: #333
+    }
+
+    .color2 {
+      color: #C0392B
+    }
+
+
+    .card {
+      color: #087e7e;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 300px;
+      height: 400px;
+      background: #f1f1ef;
+      transform-style: preserve-3d;
+      transform: translate(-50%, -50%) perspective(2000px);
+      box-shadow: inset 300px 0 50px rgba(0, 0, 0, .5), 20px 0 60px rgba(0, 0, 0, .5);
+      transition: 1s;
+    }
+
+    .card:hover {
+      transform: translate(-50%, -50%) perspective(2000px) scale(1.2) rotate(-5deg);
+      left: 53%;
+      box-shadow: inset 15px 0 15px rgba(0, 0, 0, .5), 0 30px 100px rgba(0, 0, 0, .5);
+    }
+
+    .card:before {
+      content: '';
+      position: absolute;
+      top: -5px;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: #BAC1BA;
+      transform-origin: bottom;
+      transform: skewX(-45deg);
+      z-index: 0;
+    }
+
+    .card:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: -5px;
+      width: 5px;
+      height: 100%;
+      background: #92A29C;
+      transform-origin: left;
+      transform: skewY(-45deg);
+    }
+
+    .love-area {
+      position: absolute;
+      width: 100px;
+      transform: rotate(30deg);
+      right: 5px;
+      top: 8px;
+    }
+
+    .love-area img {
+      width: 100%;
+      height: 100%;
+    }
+
+    .card .imgBox {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-origin: left;
+      transition: .7s;
+    }
+
+    .card .bark {
+      position: absolute;
+      background: #e0e1dc;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: .7s;
+    }
+
+    .card .imgBox img {
+      min-width: 250px;
+      max-height: 400px;
+    }
+
+    .card:hover .imgBox {
+      transform: rotateY(-135deg);
+    }
+
+    .card:hover .bark {
+      opacity: 1;
+      transition: .6s;
+      box-shadow: 300px 200px 100px rgba(0, 0, 0, .4) inset;
+    }
+
+    .card:hover .love {
+      opacity: 1;
+      transition: .6s;
+      transition-delay: 0.2s;
+    }
+
+    .love {
+      position: absolute;
+      top: 43%;
+      height: 100%;
+      right: 45%;
+      font-size: 50px;
+      color: #333;
+      font-weight: 600;
+      opacity: 0;
+    }
+
+    .card .details {
+      position: absolute;
+      top: 0;
+      left: 0;
+      box-sizing: border-box;
+      padding: 0 0 0 10px;
+      z-index: -1;
+      margin-top: 70px;
+    }
+
+    .img-area {
+      position: absolute;
+      width: 130px;
+      top: -80px;
+      left: -10px;
+      animation: alternate chicken 3s infinite linear;
+    }
+
+    .img-area img {
+      width: 100%;
+      height: 100%;
+    }
+
+    @keyframes chicken {
+      0% {
+        transform: rotate(-10deg);
+      }
+
+      50% {
+        transform: rotate(10deg);
+      }
+
+      100% {
+        transform: rotate(-10deg);
+      }
+    }
+
+    .card .details p {
+      font-size: 16px;
+      line-height: 5px;
+      padding: 0 0 0 20px;
+    }
+
+    .card .details h4 {
+      text-align: center;
+      margin-left: 6px;
+    }
+
+    .text-right {
+      text-align: right;
+    }
+
+    @media screen and (max-width: 500px) {
+      .card:hover {
+        transform: translate(-50%, -50%) perspective(2000px);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card">
+    <div class="love-area">
+      <img src="love.png">
+    </div>
+    <div class="imgBox">
+      <div class="bark">
+        <div class="love">♥</div>
+      </div>
+      <img src="page.png">
+    </div>
+    <div class="details">
+      <div class="img-area">
+        <img src="chicken.png">
+      </div>
+      <h4 class="color1">－May today be as special as you are－</h2>
+        <h4 class="color2 margin">-HAPPY BIRTHDAY <span style="color:rgb(31, 143, 218)">Ivy Babe</span>-</h3>
+          <p>Dear Ivy,</p>
+          <p>恭喜妳又長大一歲了</p>
+          <p>But don’t worry. You don’t look your age!</p>
+          <p>與妳相處的每一天都很幸福愉快</p>
+          <p>I will accompany you to make your </p>
+          <p>birthday wishes every year</p>
+          <p>也謝謝妳一直陪在我身邊</p>
+          <p style="color: brown;">I love u ♥ </p>
+          <p class="text-right">Your Engineering Boyfriend</p>
+          <p class="text-right">♥ Dylan</p>
+    </div>
+  </div>
+</body>
+
+</html>
